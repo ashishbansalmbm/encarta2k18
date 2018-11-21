@@ -1,0 +1,47 @@
+{% extends 'homepage.html' %}
+
+{% block head %}
+    <title>Create Profile</title>
+{% endblock %}
+
+{% load widget_tweaks %}
+
+{% block body %}
+
+    <style>
+    input
+    {
+            border: #127cd9 1px solid !important;
+            font-family: monospace !important;
+            text-decoration: underline !important;
+            color: #70e3c3 !important;
+    }
+</style>
+
+
+
+                        <div class="section-top-border container" style="padding-top: 150px" >
+						<div class="row">
+							<div class="col-lg-8 col-md-8">
+								<h3 class="mb-30">Create Profile</h3>
+
+                                <form action="" method="post">
+                                    {% csrf_token %}
+
+                                    {% for field in form %}
+                                        <p>{{ field.errors }}</p>
+                                        <p>{{ field.label_tag }}</p>
+                                        <p>{{ field }}</p>
+                                    {% endfor %}
+
+
+
+                                    <div class="mt-10">
+										 <button type="submit" class="genric-btn success-border radius" >Register</button>
+									</div>
+
+								</form>
+							</div>
+                        </div>
+
+{% endblock %}

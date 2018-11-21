@@ -1,0 +1,58 @@
+/*
+Theme Name: MESH
+Theme URI: http://stylishthemes.co/mesh/
+Author: StylishThemes
+Author URI: http://stylishthemes.co
+Description: The Entertainment Theme
+Version: 2.1.0
+License: GNU General Public License version 3.0
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Text Domain: mesh
+Tags: black, blue, white, two-columns, responsive-layout, threaded-comments, translation-ready, custom-menu
+*/
+
+.tc_the_content_pre { display: none; }
+
+.wp-caption-text, .sticky, .screen-reader-text, .gallery-caption, .bypostauthor {}
+
+.ajax-update-content.ajax_bottom { padding: 0 !important; margin:0 !important; }
+
+#wp-calendar #today { color: #fff; }
+
+.mesh-custom-1 { text-align: center; padding: 50px; }
+.mesh-custom-2 { padding-top: 3rem !important; }
+.mesh-custom-3 { margin-top: -10px !important; }
+.mesh-custom-4 { display: block; margin: 0.5em 0.5em 0 0; clear: both; }
+
+.header-carousel.events-articles article {
+    margin-bottom: 0;
+}
+
+.blog-articles article:hover:after, .events-articles article:hover:after {
+    opacity: 1;
+}
+
+body.hide-footer .main-footer { display:none; }
+
+.header-carousel.events-articles article h2 a, .header-carousel.events-articles article footer a, .header-carousel.events-articles article span, .header-carousel.events-articles article h2 a:hover { color: #fff; }
+
+.breadcrumb-page.opacity-0 > .overlay-breadcrumb, .breadcrumb-page.opacity-0:before { opacity: 0 !important; }
+.breadcrumb-page.opacity-1 > .overlay-breadcrumb, .breadcrumb-page.opacity-1:before { opacity: 0.1 !important; }
+.breadcrumb-page.opacity-2 > .overlay-breadcrumb, .breadcrumb-page.opacity-2:before { opacity: 0.2 !important; }
+.breadcrumb-page.opacity-3 > .overlay-breadcrumb, .breadcrumb-page.opacity-3:before { opacity: 0.3 !important; }
+.breadcrumb-page.opacity-4 > .overlay-breadcrumb, .breadcrumb-page.opacity-4:before { opacity: 0.4 !important; }
+.breadcrumb-page.opacity-5 > .overlay-breadcrumb, .breadcrumb-page.opacity-5:before { opacity: 0.5 !important; }
+.breadcrumb-page.opacity-6 > .overlay-breadcrumb, .breadcrumb-page.opacity-6:before { opacity: 0.6 !important; }
+.breadcrumb-page.opacity-7 > .overlay-breadcrumb, .breadcrumb-page.opacity-7:before { opacity: 0.7 !important; }
+.breadcrumb-page.opacity-8 > .overlay-breadcrumb, .breadcrumb-page.opacity-8:before { opacity: 0.8 !important; }
+.breadcrumb-page.opacity-9 > .overlay-breadcrumb, .breadcrumb-page.opacity-9:before { opacity: 0.9 !important; }
+.breadcrumb-page.opacity-10 > .overlay-breadcrumb, .breadcrumb-page.opacity-10:before { opacity: 1 !important; }
+
+.artist-dark-button-style .with-overlay .call-to-action-block p { color: white; }
+.light-layout.festival-button-style .call-to-action-block p, .festival-button-style .call-to-action-block p { color: #6e6e6e; }
+.festival-button-style .call-to-action-block blockquote { padding-top: 0; }
+
+.mesh-fullwidth-image img { width: 100vw; }
+.light-layout .inverted-section-text-color p { color: #fff; }
+.inverted-section-text-color p { color: #000; }
+.tcm_fa_icon { position: relative; left: -20px; }
