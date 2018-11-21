@@ -35,7 +35,7 @@ class Event(models.Model):
     details = models.TextField(null=True, blank=True)
     time = models.CharField(max_length=20)
     cost = models.IntegerField(default=0)
-    picture = models.ImageField(blank=True)
+    picture = models.ImageField(blank=True, upload_to="static/uplodes")
     prize = models.CharField(max_length=100, null=True, blank=True)
 
     def __str__(self):

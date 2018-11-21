@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from user.forms import RegistrationForm, CreateProfileForm
 from user.models import Event, Participation
 
@@ -16,12 +16,12 @@ def register(request):
         form = RegistrationForm(request.POST)
         if form.is_valid():
             form.save()
-            return render(request, 'registration/login.html')
+            return render(request, 'homepage.html')
         return render(request, 'registration_form.html', {'form': form})
 
     else:
         form = RegistrationForm()
-    return render(request, 'registration_form.html', {'form': form})
+        return render(request, 'registration_form.html', {'form': form})
 
 
 def profile(request):

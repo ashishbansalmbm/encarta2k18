@@ -25,7 +25,10 @@ SECRET_KEY = '#o^ascn=%1b9$jg+7@8i0r0ng174ix6lwi1_4j#&#naaozxbsq'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+    'encartambm.in'
+]
 
 
 # Application definition
