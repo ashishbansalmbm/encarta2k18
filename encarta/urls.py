@@ -22,8 +22,13 @@ from django.conf.urls.static import static
 from user import views
 
 urlpatterns = [
-    path('', TemplateView.as_view(template_name='homepage.html'), name='homepage'),
+    path('', views.homepage, name='homepage'),
     path('events/', TemplateView.as_view(template_name='event.html'), name='events'),
+    path('detail/<int:id>/', views.detail, name='detail'),
+    path('events/last_year/', TemplateView.as_view(template_name='last_year.html'), name='last_year'),
+    path('events/having_fun/', TemplateView.as_view(template_name='having_fun.html'), name='having_fun'),
+    path('events/after_fun/', TemplateView.as_view(template_name='after_fun.html'), name='after_fun'),
+    path('events/hit_events/', TemplateView.as_view(template_name='hit_events.html'), name='hit_events'),
     path('register/', views.register, name='register'),
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),

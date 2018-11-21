@@ -3,6 +3,14 @@ from user.forms import RegistrationForm, CreateProfileForm
 from user.models import Event, Participation
 
 
+def homepage(request):
+    all_events = Event.objects.all()
+    return render(request, 'homepage.html', {'all_events': all_events})
+
+def detail(request, id):
+    event = Event.objects.get(pk=id)
+    return render(request, 'event_detail.html', {'event': event})
+
 def register(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)

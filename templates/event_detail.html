@@ -1,0 +1,149 @@
+{% extends 'homepage.html' %}
+{% load static %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+
+ <!-- AJAX container -->
+    <div id="updatable-content">
+
+	<!-- AJAX updatable content -->
+		<div class="ajax-update-content without-featured-image">
+
+	<div class="overlay-for-image-bg"></div>
+	<!-- Breadcrumb For Page -->
+	<!-- You can have multiple size of breadcrumb by using following classes : xs , sm , md , lg -->
+	<!-- You can also have fixed background by using 'fixed-bg' class -->
+	<div class="breadcrumb-page xs"></div>
+
+
+	<div class="container no-negative-mt">
+
+		<div class="row">
+						<div class="col-md-9">
+
+					<div class="row" role="main">
+						<div class="col-sm-12">
+
+							<article id="post-339" class="blog-single-container post-339 artist type-artist status-publish has-post-thumbnail hentry artist-category-day-one">
+
+	<div class="album-title">
+		<header>
+					<h1>{{ event.name }}</h1>
+		</header>
+
+	</div>
+
+
+ <blockquote>
+<p style="text-align: justify;">{{ event.details }}</p>
+</blockquote>
+
+</article>
+
+						</div>
+					</div>
+
+							</div>
+
+							<div class="col-md-3">
+
+					<!-- Sidebar pagination for posts -->
+
+<div class="main-sidebar" role="complementary">
+    <aside id="tcm_latest_tweet-2" class="widget widget-twitter"><article>
+    <!-- Tweet author ingo -->
+    <header>
+        <h3>
+            Let the Fun Begin</h3>
+    </header>
+    <!-- Tweet content -->
+    <div class="twitter-entries">
+        <p>
+            /        </p>
+    </div>
+
+</article>
+</aside><aside id="tcm_single_event_and_countdown-2" class="widget widget-events-with-timer filled">
+      <article>
+          <!-- Event info -->
+          <header>
+              <!-- Figure tag with thumbnail for event -->
+              <figure >
+                  <!-- Link for single event -->
+                  <a href="{% url 'homepage' %}" class="cover-all"></a>
+                  <!-- Event date details -->
+                  <time datetime="2018-12-1 08:00:00">
+                      <!-- Number of day -->
+                      <span class="number-day">
+                          01                      </span>
+                      <!-- The month -->
+                      <span class="month">
+                          Dec                      </span>
+                      <!-- Hour for event -->
+                      <span class="hour">
+                          08:00                    </span>
+                  </time>
+                  <!-- Title and venue -->
+                  <figcaption>
+                      <!-- Event title -->
+                      <h2>
+                          Encarta                      </h2>
+                      <!-- Event venue -->
+                      <p>
+                         CSE Department                    </p>
+                  </figcaption>
+              </figure>
+          </header>
+          <!-- Countdown container -->
+          <!-- Set start event date from "data-countdown" y/m/d -->
+          <footer class="count-down-event clearfix" data-countdown="2018-12-1 08:00:00">
+              <div class="col-xs-3 col-sm-6 col-md-3">
+                  <span class="time-item days">
+                      <!-- Here the js insert how many days are remaining until the start of the event -->
+                  </span>
+                  <span>
+                      Days                  </span>
+              </div>
+              <div class="col-xs-3 col-sm-6 col-md-3">
+                  <span class="time-item hours">
+                      <!-- Here the js insert how many hours are remaining until the start of the event -->
+                  </span>
+                  <span>
+                      Hours                  </span>
+              </div>
+              <div class="col-xs-3 col-sm-6 col-md-3">
+                  <span class="time-item minutes">
+                      <!-- Here the js insert how many minutes are remaining until the start of the event -->
+                  </span>
+                  <span>
+                      Minutes                  </span>
+              </div>
+              <div class="col-xs-3 col-sm-6 col-md-3">
+                  <span class="time-item seconds">
+                      <!-- Here the js insert how many seconds are remaining until the start of the event -->
+                  </span>
+                  <span>
+                      Sec                  </span>
+              </div>
+          </footer>
+      </article>
+    </aside>
+
+    <!-- #main-sidebar -->
+
+				</div>
+
+		</div>
+
+	</div> <!-- End the container -->
+
+	</div> <!-- End the ajax-update-content -->
+
+
+    </div><!-- Close the #updatable-content div -->
+
+ {% endblock %}
