@@ -37,6 +37,8 @@ class Event(models.Model):
     cost = models.IntegerField(default=0)
     picture = models.ImageField(blank=True, upload_to="static/uplodes")
     prize = models.CharField(max_length=100, null=True, blank=True)
+    #day = 1,2,3 is 1st day or second
+    day = models.IntegerField(default=1, blank=True, null=True)
 
     def __str__(self):
         return self.name

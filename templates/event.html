@@ -11,7 +11,7 @@
             <!-- Social icons from header -->
             <div class="social-list">
                <!-- Social icons item -->
-               <a href="http://facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+               <a href="https://www.facebook.com/encarta21.0/" target="_blank"><i class="fab fa-facebook-f"></i></a>
                 <a href="http://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
             </div>
          </div>
@@ -62,7 +62,7 @@
                                   {% for i in event3 %}
                                  <tr>
                                     <td class="text-capitalize">{{ i.event.name }}</td>
-                                     <td>{{ i.event.time }}</td>
+                                     <td>{{ i.event.time }} Day {{ i.event.day }}</td>
                                     <td>{{ i.event.cost }}</td>
                                  </tr>
                                   {% endfor %}
@@ -82,7 +82,7 @@
                                   {% for i in event2 %}
                                  <tr>
                                     <td class="text-capitalize" title="{{ i.details }}">{{ i.name }}</td>
-                                     <td>{{ i.time }}</td>
+                                     <td>{{ i.time }} Day {{ i.day }}</td>
                                     <td class="unpaid">{{ i.cost }}</td>
 
                                  </tr>
@@ -104,7 +104,7 @@
                                   {% for i in event %}
                                  <tr>
                                     <td class="text-capitalize" title="{{ i.details }}">{{ i.name }}</td>
-                                     <td>{{ i.time }}</td>
+                                     <td>{{ i.time }} Day {{ i.day }}</td>
                                     <td>{{ i.cost }}</td>
                                     <td>
                                      <input type="checkbox" name="event" value="{{i.id}}">
@@ -164,7 +164,7 @@
                                  <figcaption>
                                     <!-- Event title -->
                                     <h2>
-                                       Encarta 21.0
+                                       Encarta v21.0
                                     </h2>
                                     <!-- Event venue -->
                                     <p>

@@ -5,7 +5,8 @@ from user.models import Event, Participation
 
 def homepage(request):
     all_events = Event.objects.all()
-    return render(request, 'homepage.html', {'all_events': all_events})
+    all_days = Event.objects.raw('select * from user_event group by day')
+    return render(request, 'homepage.html', {'all_events': all_events, 'all_days': all_days})
 
 def detail(request, id):
     event = Event.objects.get(pk=id)

@@ -11,7 +11,7 @@
    <link rel="pingback" href="mesh2-event/xmlrpc.php">
    <!-- ========== CSS INCLUDES ========== -->
    {% block head %}
-       <title>Encarta 21.0</title>
+       <title>Encarta v21.0</title>
    {% endblock %}
    <link rel='dns-prefetch' href='http://maps.googleapis.com/' />
    <link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
@@ -68,10 +68,7 @@
    <link rel="stylesheet" type="text/css" href="http://demo.stylishthemes.co/mesh2-event/wp-content/plugins/js_composer/assets/css/vc-ie8.min.css" media="screen">
    <![endif]-->
    <meta name="generator" content="Powered by Slider Revolution 5.2.6 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface." />
-   <link rel="icon" href="{% static 'img/favico.png' %}" sizes="32x32" />
-   <link rel="icon" href="{% static 'img/favico.png' %} sizes="192x192" />
-   <link rel="apple-touch-icon-precomposed" href={% static 'img/favico.png' %} />
-   <meta name="msapplication-TileImage" content={% static 'img/favico.png' %} />
+
    <style type="text/css" data-type="vc_shortcodes-custom-css">.vc_custom_1456413984276{margin-top: 20px !important;margin-bottom: 20px !important;}.vc_custom_1456418603458{padding-bottom: 60px !important;}.vc_custom_1456414103539{margin-top: 35px !important;margin-bottom: 75px !important;}.vc_custom_1465479904792{padding-bottom: 55px !important;}.vc_custom_1456414304109{margin-top: 35px !important;}</style>
    <noscript>
       <style type="text/css"> .wpb_animate_when_almost_visible { opacity: 1; }</style>
@@ -180,11 +177,16 @@
                      <h4 style="font-family: serif;color: yellow;">ENCARTA 21.0</h4>
                   </a>
                   <!-- The big logo -->
-                  <a href="#" rel="home" class="logo-big for-light">
+                  <a href="{% url 'homepage' %}" rel="home" class="logo-big for-light">
                      <!-- Logo image -->
                      <img src="{% static 'img/logo_small.png' %}" alt="MESH 2 Event">
                   </a>
                </div>
+                <div class="social-list" style="top: 46.5px;">
+				<!-- Social icons item -->
+				<a href="https://www.facebook.com/encarta21.0/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/encarta_v21.0/" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
             </div>
          </div>
       </div>
@@ -206,7 +208,7 @@
                                     <li  data-index="rs-2" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="300"  data-rotate="0"  data-saveperformance="off"  data-title="#EntertainME" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
 
                                         <!-- MAIN IMAGE -->
-                                       <img src="{% static 'img/thor.jpg' %}"  style="background-color: transparent;" alt="" title="event-slider-image-01"  width="2500" height="1440" data-bgposition="center center" data-bgfit="100%" data-bgrepeat="no-repeat" data-bgparallax="6" class="rev-slidebg" data-no-retina>
+                                       <img src="{% static 'img/spider_man.jpg' %}"  style="background-color: transparent;" alt="" title="event-slider-image-01"  width="2500" height="1440" data-bgposition="center center" data-bgfit="100%" data-bgrepeat="no-repeat" data-bgparallax="6" class="rev-slidebg" data-no-retina>
 
                                        <!-- LAYERS -->
                                        <!-- LAYER NR. 1 -->
@@ -419,17 +421,17 @@
                                        <a href="#all">
                                        All                  </a>
                                     </li>
-                                    <li>
-                                       <a href="#day-one">
-                                       Day One                      </a>
-                                    </li>
-                                    <li>
-                                       <a href="#day-two">
-                                       Day Two                      </a>
-                                    </li>
-                                    <li>
 
+                                     {% for x in all_days %}
+                                    <li>
+                                       <a href="#day-{{ x.day }}">
+                                       Day {{ x.day }}                      </a>
                                     </li>
+                                     {% endfor %}
+                                 <li>
+
+                                 </li>
+
                                  </ul>
                               </div>
                               <div class="carousels-container">
@@ -452,235 +454,29 @@
 
                                     </ul>
                                  </div>
-                                 <div class="filter-carousel " id="day-one">
+
+                                {% for day in all_days %}
+                                 <div class="filter-carousel " id="day-{{ day.day }}">
                                     <ul>
+                                        {% for event in all_events %}
+                                            {% if event.day ==  day.day  %}
                                        <li>
-                                          <article class="carousel-audio-article"  style="background-image: url({% static 'img/' %});" >
-                                             <span class="article-type">
-                                             Coding                             </span>
-                                             <a href="#" class="cover-all">
+                                          <article class="carousel-audio-article"  style="background-image: url('{{ event.picture }}');" >
+                                             <a href="{% url 'detail' event.id %}" class="cover-all">
                                              </a>
                                              <header>
                                                 <h2>
-                                                 Codecode
+                                                   {{ event.name }}
                                                 </h2>
+                                                 <p>{{ event.time }}</p>
                                              </header>
                                           </article>
                                        </li>
-                                        <li>
-                                          <article class="carousel-audio-article"  style="background-image: url({% static 'img/blinf.jpg' %});" >
-                                             <span class="article-type">
-                                             Coding                             </span>
-                                             <a href="#" class="cover-all">
-                                             </a>
-                                             <header>
-                                                <h2>
-                                                 Blind Faith
-                                                </h2>
-                                             </header>
-                                          </article>
-                                       </li>
-                                        <li>
-                                          <article class="carousel-audio-article"  style="background-image: url({% static 'img/' %});" >
-                                             <span class="article-type">
-                                             Fun Event                             </span>
-                                             <a href="#" class="cover-all">
-                                             </a>
-                                             <header>
-                                                <h2>
-                                                Dalal Street
-                                                </h2>
-                                             </header>
-                                          </article>
-                                       </li>
-                                        <li>
-                                          <article class="carousel-audio-article"  style="background-image: url({% static 'img/' %});" >
-                                             <span class="article-type">
-                                             Fun Event                             </span>
-                                             <a href="#" class="cover-all">
-                                             </a>
-                                             <header>
-                                                <h2>
-                                                 Prashnottari
-                                                </h2>
-                                             </header>
-                                          </article>
-                                       </li>
-                                        <li>
-                                          <article class="carousel-audio-article"  style="background-image: url({% static 'img/' %});" >
-                                             <span class="article-type">
-                                             Robotics                             </span>
-                                             <a href="#" class="cover-all">
-                                             </a>
-                                             <header>
-                                                <h2>
-                                                 Robo Soccer
-                                                </h2>
-                                             </header>
-                                          </article>
-                                       </li>
-                                        <li>
-                                          <article class="carousel-audio-article"  style="background-image: url({% static 'img/' %});" >
-                                             <span class="article-type">
-                                             Gaming                             </span>
-                                             <a href="#" class="cover-all">
-                                             </a>
-                                             <header>
-                                                <h2>
-                                                 Counter Strike
-                                                </h2>
-                                             </header>
-                                          </article>
-                                       </li>
-                                        <li>
-                                          <article class="carousel-audio-article"  style="background-image: url({% static 'img/' %});" >
-                                             <span class="article-type">
-                                             WorkShop                            </span>
-                                             <a href="#" class="cover-all">
-                                             </a>
-                                             <header>
-                                                <h2>
-                                                 WorkShop
-                                                </h2>
-                                             </header>
-                                          </article>
-                                       </li>
+                                            {% endif %}
+                                        {% endfor %}
                                     </ul>
                                  </div>
-                                 <div class="filter-carousel " id="day-two">
-                                    <ul>
-                                       <li>
-                                          <article class="carousel-audio-article"  style="background-image: url({% static 'img/' %});" >
-                                             <span class="article-type">
-                                             Coding                             </span>
-                                             <a href="#" class="cover-all">
-                                             </a>
-                                             <header>
-                                                <h2>
-                                                 Webkrates
-                                                </h2>
-                                             </header>
-                                          </article>
-                                       </li>
-                                       <li>
-                                          <article class="carousel-audio-article"  style="background-image: url({% static 'img/Tressure.jpg' %});" >
-                                             <span class="article-type">
-                                             Fun Event                             </span>
-                                             <a href="#" class="cover-all">
-                                             </a>
-                                             <header>
-                                                <h2>
-                                                 MBM HUNT
-                                                </h2>
-                                             </header>
-                                          </article>
-                                       </li>
-                                         <li>
-                                          <article class="carousel-audio-article"  style="background-image: url({% static 'img/bamboo.gif' %});" >
-                                             <span class="article-type">
-                                             Fun Event                             </span>
-                                             <a href="#" class="cover-all">
-                                             </a>
-                                             <header>
-                                                <h2>
-                                                 Bamboozled
-                                                </h2>
-                                             </header>
-                                          </article>
-                                       </li>
-                                       <li>
-                                          <article class="carousel-audio-article"  style="background-image: url({% static 'img/' %});" >
-                                             <span class="article-type">
-                                             Coding                             </span>
-                                             <a href="#" class="cover-all">
-                                             </a>
-                                             <header>
-                                                <h2>
-                                                Quick Match
-                                                </h2>
-                                             </header>
-                                          </article>
-                                       </li>
-                                        <li>
-                                          <article class="carousel-audio-article"  style="background-image: url({% static 'img/' %});" >
-                                             <span class="article-type">
-                                             Fun Event                             </span>
-                                             <a href="#" class="cover-all">
-                                             </a>
-                                             <header>
-                                                <h2>
-                                                 Pick A Pic
-                                                </h2>
-                                             </header>
-                                          </article>
-                                       </li>
-                                        <li>
-                                          <article class="carousel-audio-article"  style="background-image: url({% static 'img/' %});" >
-                                             <span class="article-type">
-                                             Coding                             </span>
-                                             <a href="#" class="cover-all">
-                                             </a>
-                                             <header>
-                                                <h2>
-                                                 Codiyapa
-                                                </h2>
-                                             </header>
-                                          </article>
-                                       </li>
-                                        <li>
-                                          <article class="carousel-audio-article"  style="background-image: url({% static 'img/' %});" >
-                                             <span class="article-type">
-                                             Robotics                             </span>
-                                             <a href="#" class="cover-all">
-                                             </a>
-                                             <header>
-                                                <h2>
-                                                 Line Follower
-                                                </h2>
-                                             </header>
-                                          </article>
-                                       </li>
-                                        <li>
-                                          <article class="carousel-audio-article"  style="background-image: url({% static 'img/' %});" >
-                                             <span class="article-type">
-                                             Workshop                            </span>
-                                             <a href="#" class="cover-all">
-                                             </a>
-                                             <header>
-                                                <h2>
-                                                 WorkShop
-                                                </h2>
-                                             </header>
-                                          </article>
-                                       </li>
-                                        <li>
-                                          <article class="carousel-audio-article"  style="background-image: url({% static 'img/' %});" >
-                                             <span class="article-type">
-                                             Fun Events                             </span>
-                                             <a href="#" class="cover-all">
-                                             </a>
-                                             <header>
-                                                <h2>
-                                                 Appoclypso
-                                                </h2>
-                                             </header>
-                                          </article>
-                                       </li>
-                                        <li>
-                                          <article class="carousel-audio-article"  style="background-image: url({% static 'img/' %});" >
-                                             <span class="article-type">
-                                             Gaming                             </span>
-                                             <a href="#" class="cover-all">
-                                             </a>
-                                             <header>
-                                                <h2>
-                                                 FIFA
-                                                </h2>
-                                             </header>
-                                          </article>
-                                       </li>
-                                    </ul>
-                                 </div>
+                              {% endfor %}
                               </div>
                            </div>
                         </div>
@@ -757,19 +553,17 @@
                            <div class="photo-albums-listing masonry-listing ">
                               <div class="col-lg-6 col-md-4 col-sm-6 col-xs-4">
                                  <article class="">
-                                    <div class="photo-album-thumbnail"  style="background-image: url(mesh2-event/wp-content/uploads/sites/14/2016/02/Heinekens-Sensation-Party-9-600x600.jpg);" ></div>
+                                    <div class="photo-album-thumbnail"  style="background-image: url({% static 'uplodes/all.jpeg' %});" ></div>
                                     <a href="{% url 'last_year' %}" class="cover-all"></a>
                                     <header>
                                        <figure>
                                           <figcaption>
-                                             <time datetime="February 21, 2016">
-                                             February 21, 2016                                </time>
+                                             <time datetime="November 22, 2016">
+                                             November 22, 2016                                </time>
                                              <h2>
-                                                Last Years Festival
+                                                Previous Glimpse
                                              </h2>
-                                             <p>
-                                                7 photos
-                                             </p>
+
                                           </figcaption>
                                        </figure>
                                     </header>
@@ -777,13 +571,13 @@
                               </div>
                               <div class="col-lg-3 col-md-4 col-sm-6 col-xs-4">
                                  <article class="md">
-                                    <div class="photo-album-thumbnail"  style="background-image: url(mesh2-event/wp-content/uploads/sites/14/2016/02/Singapore-GP-600x600.jpg);" ></div>
+                                    <div class="photo-album-thumbnail"  style="background-image: url({% static 'uplodes/me_ankur.jpeg' %});" ></div>
                                     <a href="{% url 'having_fun' %}" class="cover-all"></a>
                                     <header>
                                        <figure>
                                           <figcaption>
-                                             <time datetime="February 21, 2016">
-                                             February 21, 2016                                </time>
+                                             <time datetime="November 22, 2016">
+                                             November 22, 2016                                </time>
                                              <h2>
                                                 People Having FUN
                                              </h2>
@@ -797,13 +591,13 @@
                               </div>
                               <div class="col-lg-3 col-md-4 col-sm-6 col-xs-4">
                                  <article class="sm">
-                                    <div class="photo-album-thumbnail"  style="background-image: url(mesh2-event/wp-content/uploads/sites/14/2016/02/Party-time-600x600.jpg);" ></div>
+                                    <div class="photo-album-thumbnail"  style="background-image: url({% static 'uplodes/' %});" ></div>
                                     <a href="{% url 'after_fun' %}" class="cover-all"></a>
                                     <header>
                                        <figure>
                                           <figcaption>
-                                             <time datetime="February 21, 2016">
-                                             February 21, 2016                                </time>
+                                             <time datetime="November 22, 2016">
+                                             November 22, 2016                                </time>
                                              <h2>
                                                 The party after the party
                                              </h2>
@@ -822,14 +616,12 @@
                                     <header>
                                        <figure>
                                           <figcaption>
-                                             <time datetime="February 21, 2016">
-                                             February 21, 2016                                </time>
+                                             <time datetime="November 22, 2016">
+                                             November 22, 2016                                </time>
                                              <h2>
                                                 Famous People
                                              </h2>
-                                             <p>
-                                                7 photos
-                                             </p>
+
                                           </figcaption>
                                        </figure>
                                     </header>
@@ -848,7 +640,7 @@
                               <div class="col-md-6 col-sm-offset-3">
                                  <h2>Follow Encarta on Facebook</h2>
                                  <p>The never Ending Fun Ship </p>
-                                 <a href="" target="_blank" class="default-btn">
+                                 <a href="https://www.facebook.com/encarta21.0/" target="_blank" class="default-btn">
                                  Facebook            </a>
                               </div>
                            </div>
@@ -900,9 +692,9 @@
                <aside id="tcm_social_media_profiles-2" class="widget widget_follow_media">
                   <h3>Social Media Profiles</h3>
                   <ul>
-                     <li><a href="http://facebook.com/" target="_blank">Facebook</a></li>
+                     <li><a href="https://www.facebook.com/encarta21.0/" target="_blank"><i class="fab fa-facebook-f"></i>Facebook</a></li>
 
-                     <li><a href="http://instagram.com/" target="_blank">Instagram</a></li>
+                     <li><a href="https://www.instagram.com/encarta_v21.0/" target="_blank"><i class="fab fa-instagram"></i>Instagram</a></li>
                         </ul>
                </aside>
             </div>
@@ -923,7 +715,7 @@
             <!-- Copyrights container -->
             <div class="copyright">
                <!-- Copyrights -->
-               <p>© 2018 <a href="#">Encarta</a>. All rights reserved.</p>
+               <p>© 2018 <a href="{% url 'homepage' %}">Encarta</a>. All rights reserved.</p>
                 <h4 style="font-family: inherit">Designed BY Ashish Bansal</h4>
             </div>
          </div>
