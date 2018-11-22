@@ -42,12 +42,12 @@
                            <p>Go ahead the game and dive in the matrix.</p>
 
                             <div>
-                                 <h1>Hellicarrier is about to launch.</h1>
+                                <h2>Show this Id: <b>{{ user.profile.encarta_id }}</b> to board the Hellicarrier</h2>
+                                <h5>To complete your Registration Paytm/GooglePay/PhonePe to <b>ARCHI GOYAL : 9166541274</b></h5>
+                            <p>Keep the transaction details to show at the desk and verify your participation.</p>
                                 {% if user.profile.verified == False %}
                                     <p>Complete Your Registration on desk.</p>
                                     <h1>Your encarta id: {{ user.profile.encarta_id }}</p>
-                                {% else %}
-                                    <p>Register Soon</p>
                                 {% endif %}
 
                             </div>
@@ -164,11 +164,11 @@
                                  <figcaption>
                                     <!-- Event title -->
                                     <h2>
-                                       Encarta v21.0
+                                       {{ user.profile.encarta_id }}
                                     </h2>
                                     <!-- Event venue -->
                                     <p>
-                                       CSE DEPARTMENT
+                                       Encarta ID
                                     </p>
                                  </figcaption>
                               </figure>

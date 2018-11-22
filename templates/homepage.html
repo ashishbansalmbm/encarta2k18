@@ -174,7 +174,7 @@
                   <!-- The normal logo -->
                   <a href="{% url 'homepage' %}" rel="home" class="logo">
                      <!-- Logo image -->
-                     <h4 style="font-family: serif;color: yellow;">ENCARTA 21.0</h4>
+                     <h3 style="font-family: serif;color: #57d0f4 ">ENCARTA v21.0</h3>
                   </a>
                   <!-- The big logo -->
                   <a href="{% url 'homepage' %}" rel="home" class="logo-big for-light">
@@ -288,7 +288,8 @@
                                           data-splitin="none"
                                           data-splitout="none"
                                           data-responsive_offset="on"
-                                          style="z-index: 7; white-space: nowrap; font-size: 20px; line-height: 22px; font-weight: 400; color: rgba(255, 255, 255, 1.00);"><a href="{% url 'register' %}" class="default_dark_mesh_button">Register</a>
+                                          style="z-index: 7; white-space: nowrap; font-size: 20px; line-height: 22px; font-weight: 400; color: rgba(255, 255, 255, 1.00);">
+                                           <a href="{% url 'register' %}" class="default_dark_mesh_button">Register</a>
                                           <a href="{% url 'login' %}" class="default_mesh_button"><i class="fa fa-power-off"></i> Login</a>
                                        </div>
                                     </li>
@@ -484,27 +485,30 @@
                   </div>
                </div>
                <div class="vc_row wpb_row vc_row-fluid vc_custom_1456413984276">
+
                   <div class="wpb_column vc_column_container vc_col-sm-4">
                      <div class="vc_column-inner ">
                         <div class="wpb_wrapper"  style="background-image: url({% static 'img/c.gif' %})">
                            <article class="mini-call-to-action" >
                               <h2>Theme</h2>
-                              <p>Tribute To The Stan lee</p>
+                              <p style=" color: white">Tribute To The Stan lee</p>
                            </article>
                         </div>
                      </div>
                   </div>
-                  <div class="wpb_column vc_column_container vc_col-sm-4" >
+
+                   <div class="wpb_column vc_column_container vc_col-sm-4" >
                      <div class="vc_column-inner " >
                         <div class="wpb_wrapper" style="background-image: url({% static 'img/e.gif' %}); background-position: center">
 
                            <article class="mini-call-to-action " >
                               <h2>Filler Event</h2>
-                              <p>To keep you guys engaging and enthusiastic.</p>
+                              <p style="color: white">To keep you guys engaging and enthusiastic.</p>
                            </article>
                         </div>
                      </div>
                   </div>
+
                   <div class="wpb_column vc_column_container vc_col-sm-4">
                      <div class="vc_column-inner ">
                                 <div class="wpb_wrapper" style="background-image: url({% static 'img/dr.gif' %});background-position: center;
@@ -512,11 +516,51 @@
             background-size: cover;">
                            <article class="mini-call-to-action " >
                               <h2>Gaming</h2>
-                              <p>Welcome Gamers to tech ship.</p>
+                              <p style=" color: white">Welcome Gamers to tech ship.</p>
                            </article>
                         </div>
                      </div>
                   </div>
+
+               </div>
+                <div class="vc_row wpb_row vc_row-fluid vc_custom_1456413984276">
+
+                  <div class="wpb_column vc_column_container vc_col-sm-4">
+                     <div class="vc_column-inner ">
+                        <div class="wpb_wrapper"  style="background-image: url({% static 'img/coding.gif' %})">
+                           <article class="mini-call-to-action" >
+                              <h2>Robotics</h2>
+                              <p style=" color: white">Feel the tech.</p>
+                           </article>
+                        </div>
+                     </div>
+                  </div>
+
+                   <div class="wpb_column vc_column_container vc_col-sm-4" >
+                     <div class="vc_column-inner " >
+                        <div class="wpb_wrapper" style="background-image: url({% static 'img/know.gif' %}); background-position: center">
+
+                           <article class="mini-call-to-action " >
+                              <h2>Workshops</h2>
+                              <p style="color: white">Knowhere - the Celestials are shrouded in mystery.</p>
+                           </article>
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="wpb_column vc_column_container vc_col-sm-4">
+                     <div class="vc_column-inner ">
+                                <div class="wpb_wrapper" style="background-image: url({% static 'img/blind.gif' %});background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;">
+                           <article class="mini-call-to-action " >
+                              <h2>Coding</h2>
+                              <p style=" color: white">Be the Iron Man in you.</p>
+                           </article>
+                        </div>
+                     </div>
+                  </div>
+
                </div>
                <div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-parallax="1.5" data-vc-parallax-image="http://demo.stylishthemes.co/mesh2-event/wp-content/uploads/sites/14/2016/02/tomorrowland-high-quality-wallpaper-download-free.jpg" class="vc_row wpb_row vc_row-fluid section-padding with-overlay vc_custom_1456418603458 vc_row-has-fill vc_general vc_parallax vc_parallax-content-moving">
                   <div class="wpb_column vc_column_container vc_col-sm-12">
@@ -524,13 +568,13 @@
                         <div class="wpb_wrapper">
                            <div class="call-to-action-block left clearfix ">
                               <div class="col-md-3 col-md-offset-1">
-                                 <img src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-src="{% static 'img/Encarta_logo.png' %}" alt="Encarta" />
+                                 <img src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-src="{% static 'img/logo.png' %}" alt="Encarta" />
                                  <noscript><img src="{% static 'img/En.png' %}" alt="MESH" /></noscript>
                               </div>
                               <div class="col-md-7">
                                  <blockquote>
                                     <p>Encarta'18 is the annual Techno-Managerial symposium of MBM Jodhpur, by far provides the biggest platform to showcase the Connoisseurs of technology. Come, Touch, Feel and Smell technologies like never before.</p>
-                                    <cite>Encarta</cite>
+                                    <cite style="color: #57d0f4;">Encarta</cite>
                                  </blockquote>
                               </div>
                            </div>
@@ -553,8 +597,8 @@
                            <div class="photo-albums-listing masonry-listing ">
                               <div class="col-lg-6 col-md-4 col-sm-6 col-xs-4">
                                  <article class="">
-                                    <div class="photo-album-thumbnail"  style="background-image: url({% static 'uplodes/all.jpeg' %});" ></div>
-                                    <a href="{% url 'last_year' %}" class="cover-all"></a>
+                                    <div class="photo-album-thumbnail"  style="background-image: url({% static 'uplodes/group.jpeg' %});" ></div>
+                                    <!-- a href="" class="cover-all"></a-->
                                     <header>
                                        <figure>
                                           <figcaption>
@@ -572,7 +616,7 @@
                               <div class="col-lg-3 col-md-4 col-sm-6 col-xs-4">
                                  <article class="md">
                                     <div class="photo-album-thumbnail"  style="background-image: url({% static 'uplodes/me_ankur.jpeg' %});" ></div>
-                                    <a href="{% url 'having_fun' %}" class="cover-all"></a>
+                                    <!--a href="" class="cover-all"></a-->
                                     <header>
                                        <figure>
                                           <figcaption>
@@ -582,7 +626,7 @@
                                                 People Having FUN
                                              </h2>
                                              <p>
-                                                9 photos
+
                                              </p>
                                           </figcaption>
                                        </figure>
@@ -591,8 +635,8 @@
                               </div>
                               <div class="col-lg-3 col-md-4 col-sm-6 col-xs-4">
                                  <article class="sm">
-                                    <div class="photo-album-thumbnail"  style="background-image: url({% static 'uplodes/' %});" ></div>
-                                    <a href="{% url 'after_fun' %}" class="cover-all"></a>
+                                    <div class="photo-album-thumbnail"  style="background-image: url({% static 'uplodes/archi.jpeg' %});" ></div>
+                                    <!--a href="#" class="cover-all"></a-->
                                     <header>
                                        <figure>
                                           <figcaption>
@@ -602,7 +646,7 @@
                                                 The party after the party
                                              </h2>
                                              <p>
-                                                8 photos
+
                                              </p>
                                           </figcaption>
                                        </figure>
@@ -611,16 +655,15 @@
                               </div>
                               <div class="col-lg-3 col-md-4 col-sm-6 col-xs-4">
                                  <article class="xs">
-                                    <div class="photo-album-thumbnail"  style="background-image: url(mesh2-event/wp-content/uploads/sites/14/2016/03/sav-600x436.jpg);" ></div>
-                                    <a href="{% url 'hit_events' %}" class="cover-all"></a>
+                                    <div class="photo-album-thumbnail"  style="background-image: url({% static 'uplodes/all.jpeg' %});" ></div>
+                                    <!--a href="#" class="cover-all"></a-->
                                     <header>
                                        <figure>
                                           <figcaption>
                                              <time datetime="November 22, 2016">
-                                             November 22, 2016                                </time>
-                                             <h2>
-                                                Famous People
-                                             </h2>
+                                                 Famous People
+                                             </time>
+
 
                                           </figcaption>
                                        </figure>
