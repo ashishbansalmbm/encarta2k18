@@ -27,7 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '127.0.0.1',
-    'encartambm.in'
+    'encartambm.in',
+    '52.29.41.73'
 ]
 
 
@@ -80,11 +81,21 @@ WSGI_APPLICATION = 'encarta.wsgi.application'
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'cse'),
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': os.path.join(BASE_DIR, 'cse'),
 
+    # }
+
+    'default': {
+        'ENGINE': 'django.db.backends.mysql', 
+        'NAME': 'encarta',
+        'USER': 'root',
+        'PASSWORD': 'toor',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
+
 }
 
 
@@ -126,8 +137,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static")
-]
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, "static")
+# ]
 
 LOGIN_REDIRECT_URL = '/profile/'
