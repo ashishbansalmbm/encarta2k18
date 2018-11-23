@@ -1,2 +1,2 @@
 cse 
-venv *.sqlite
+venv/ *.sqlite
