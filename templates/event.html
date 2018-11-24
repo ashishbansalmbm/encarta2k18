@@ -81,7 +81,7 @@
                                  </tr>
                                   {% for i in event2 %}
                                  <tr>
-                                    <td class="text-capitalize" title="{{ i.details }}">{{ i.name }}</td>
+                                    <td class="text-capitalize" title="{{ i.details }}"><a href="{% url 'detail' i.event.id %}">{{ i.name }}</a></td>
                                      <td>{{ i.time }} Day {{ i.day }}</td>
                                     <td class="unpaid">{{ i.cost }}</td>
 
@@ -103,7 +103,7 @@
                                  </tr>
                                   {% for i in event %}
                                  <tr>
-                                    <td class="text-capitalize" title="{{ i.details }}">{{ i.name }}</td>
+                                    <td class="text-capitalize" title="{{ i.details }}"><a href="{% url 'detail' i.event.id %}">{{ i.name }}</a></td>
                                      <td>{{ i.time }} Day {{ i.day }}</td>
                                     <td>{{ i.cost }}</td>
                                     <td>
