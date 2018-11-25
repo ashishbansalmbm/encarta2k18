@@ -186,6 +186,11 @@
 				<!-- Social icons item -->
 				<a href="https://www.facebook.com/encarta21.0/" target="_blank"><i class="fab fa-facebook-f"></i></a>
                     <a href="https://www.instagram.com/encarta_v21.0/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    {% if request.user.id %}
+                    <a href="{% url 'logout' %}" ><i class="fa fa-lock-open"> Logout</i></a>
+                    {% else %}
+                     <a href="{% url 'login' %}"><i class="fa fa-lock"> Login</i></a>
+                    {% endif %}
                 </div>
             </div>
          </div>
@@ -289,7 +294,7 @@
                                           data-splitout="none"
                                           data-responsive_offset="on"
                                           style="z-index: 7; white-space: nowrap; font-size: 20px; line-height: 22px; font-weight: 400; color: rgba(255, 255, 255, 1.00);">
-                                           <a href="{% url 'register' %}" class="default_dark_mesh_button">Register</a>
+                                           <a href="{% url 'register' %}" class="default_dark_mesh_button btn btn-primary">Register</a>
                                           <a href="{% url 'login' %}" class="default_mesh_button"><i class="fa fa-power-off"></i> Login</a>
                                        </div>
                                     </li>
@@ -441,7 +446,7 @@
                                         {% for event in all_events %}
                                        <li>
                                           <article class="carousel-audio-article"  style="background-image: url('{{ event.picture }}');" >
-                                             <a href="{% url 'detail' event.id %}" class="cover-all">
+                                             <a href="{% url 'detail' event.id %}" class="cover-all" target="_blank">
                                              </a>
                                              <header>
                                                 <h2>
@@ -463,7 +468,7 @@
                                             {% if event.day ==  day.day  %}
                                        <li>
                                           <article class="carousel-audio-article"  style="background-image: url('{{ event.picture }}');" >
-                                             <a href="{% url 'detail' event.id %}" class="cover-all">
+                                             <a href="{% url 'detail' event.id %}" class="cover-all" target="_blank">
                                              </a>
                                              <header>
                                                 <h2>
@@ -491,7 +496,7 @@
                         <div class="wpb_wrapper"  style="background-image: url({% static 'img/c.gif' %})">
                            <article class="mini-call-to-action" >
                               <h2>Theme</h2>
-                              <p style=" color: white">Tribute To The Stan lee</p>
+                              <p style=" color: white">Tribute To Stan lee</p>
                            </article>
                         </div>
                      </div>

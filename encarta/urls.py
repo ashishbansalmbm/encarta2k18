@@ -21,6 +21,10 @@ from django.conf.urls.static import static
 
 from user import views
 
+admin.site.site_header = "Encarta v21.0"
+admin.site.site_title = "Encarta v21.0"
+admin.site.index_title = "Encarta v21.0"
+
 urlpatterns = [
     path('', views.homepage, name='homepage'),
     path('events/', TemplateView.as_view(template_name='event.html'), name='events'),
@@ -33,4 +37,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
     path('profile/', views.profile, name='profile'),
+
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

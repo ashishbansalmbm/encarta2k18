@@ -35,11 +35,16 @@
 					<h1>{{ event.name }}</h1>
 		</header>
 
+        {% if event.picture %}
+        <img src="/{{ event.picture.url }}" alt="..." class="img-thumbnail" style="height: 400px; width: 400px;">
+        {% else %}
+        {% endif %}
+
 	</div>
 
 
-                                <pre style="background-color: #222222;color: #e8eadb;">
-                                <p style="text-align: justify;overflow: hidden;">{{ event.details }}
+                                <pre style="background-color: #222222;color: #e8eadb; white-space: pre-wrap; word-break: keep-all" >
+                                <p style="text-align: justify;overflow: hidden;" class="lead">{{ event.details }}
                                 </pre>
 
 </article>
