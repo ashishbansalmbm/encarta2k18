@@ -28,6 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     '127.0.0.1',
     'encartambm.in',
+	'mbmencarta.in',
     '52.29.41.73'
 ]
 
