@@ -8,7 +8,7 @@ admin.site.register(Event)
 
 
 class ParticipationAdmin(admin.ModelAdmin):
-    list_display = ['name', 'en', 'event', 'cost', 'verified']
+    list_display = ['name', 'mobile', 'en', 'event', 'cost', 'verified']
     list_editable = ['verified']
     list_filter = ['verified', 'event', 'user__first_name']
     search_fields = ['user__first_name', 'user__profile__encarta_id']
@@ -22,6 +22,9 @@ class ParticipationAdmin(admin.ModelAdmin):
     def cost(self,obj):
         return obj.event.cost
 
+    def mobile(self,obj):
+        return obj.user.profile.mobile
+
 
 class ProfileAdmin(admin.ModelAdmin):
     list_display = ['name', 'mobile', 'gender', 'current_address', 'current_year_of_study', 'encarta_id']
@@ -30,6 +33,7 @@ class ProfileAdmin(admin.ModelAdmin):
 
     def name(self, obj):
         return obj.user.first_name + ' ' + obj.user.last_name
+
 
 admin.site.register(Participation, ParticipationAdmin)
 admin.site.register(Profile, ProfileAdmin)
