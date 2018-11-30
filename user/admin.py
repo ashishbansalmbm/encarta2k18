@@ -23,7 +23,7 @@ class ParticipationAdmin(admin.ModelAdmin):
         return obj.event.cost
 
 class ProfileAdmin(admin.ModelAdmin):
-    list_display = ['name', 'mobile', 'current_year_of_study', 'encarta_id']
+    list_display = ['name', 'mobile', 'gender', 'current_address', 'current_year_of_study', 'encarta_id']
     search_fields = ['encarta_id']
 
     def name(self, obj):
