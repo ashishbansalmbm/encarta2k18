@@ -22,10 +22,11 @@ class ParticipationAdmin(admin.ModelAdmin):
     def cost(self,obj):
         return obj.event.cost
 
+
 class ProfileAdmin(admin.ModelAdmin):
     list_display = ['name', 'mobile', 'gender', 'current_address', 'current_year_of_study', 'encarta_id']
-    list_filter = ['name','gender', 'current_year_of_study']
-	search_fields = ['encarta_id']
+    list_filter = ['gender', 'current_year_of_study']
+    search_fields = ['encarta_id']
 
     def name(self, obj):
         return obj.user.first_name + ' ' + obj.user.last_name
